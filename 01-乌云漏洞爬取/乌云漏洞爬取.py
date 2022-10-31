@@ -1,10 +1,10 @@
 # coding=utf-8
 import requests
 import re
-from fake_useragent import UserAgent
 # 调用多线程函数
 import threading
 import time
+from User_Agent_random import UserAgent
 
 
 # 爬虫主体
@@ -12,7 +12,7 @@ def split(search):
     # 随机请求头
     ua = UserAgent()
     head = {
-        'User-Agent': ua.random,
+        'User-Agent': ua.randoms(),
         'referer': 'https://wy.zone.ci/',
     }
     # 设置代理
@@ -72,7 +72,7 @@ def num_pages(value1, value2):
         # 创建遍历的其他链接
         ua = UserAgent()
         head = {
-            'User-Agent': ua.random,
+            'User-Agent': ua.randoms(),
             'referer': 'https://wy.zone.ci/',
         }
         urls = rf'https://wy.zone.ci/searchbug.php?q={search}&page={i}'
