@@ -78,7 +78,3 @@ class UserAgent:
 
     def randoms(self):
         return random.choice(self._brower)
-
-# if __name__ == '__main__':
-#     ua = UserAgent()
-#     print(ua.randoms())
