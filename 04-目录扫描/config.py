@@ -2,7 +2,7 @@
 这个是配置文件
 '''
 # 目录扫描的网址
-url = r'http://www.sql.nes'
+url = r'https://u1ldya007.xyz/'
 
 # 字典位置
 dict_name = r'./dict/php(1).txt'
