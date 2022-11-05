@@ -4,6 +4,7 @@ from User_Agent_random import *
 import sys
 import requests
 import re
+import os
 
 
 class Scanphp:
@@ -14,6 +15,9 @@ class Scanphp:
             sys.exit(-1)
         self.__filepath = filepath + '/' + str(filename)
         self.__url = url.strip('/')
+        #     检测临时文件是否存在
+        if os.path.exists(tmp):
+            os.remove(tmp)
 
     # 读取Payload到url并且写出成功的结果集
     def __read_file(self, file):
@@ -22,8 +26,8 @@ class Scanphp:
                 a, b = line.split(':')
                 if self.__request_url(urls=self.__url + b):
                     print(f'存在{a}漏洞,写入数据到{tmp}文件中')
-                    file = open(tmp, mode='w', encoding='utf-8')
-                    file.write(f'{a}\n{self.__url + b}\n')
+                    file = open(tmp, mode='a+', encoding='utf-8')
+                    file.write(f'{a}\n{self.__url + b}')
                 else:
                     print(rf'抱歉未扫描出漏洞')
 
