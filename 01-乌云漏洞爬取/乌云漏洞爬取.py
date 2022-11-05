@@ -3,7 +3,6 @@ import requests
 import re
 # 调用多线程函数
 import threading
-import time
 from User_Agent_random import UserAgent
 
 
