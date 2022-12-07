@@ -1,6 +1,5 @@
 import argparse
 from code import *
-import exrex
 
 if __name__ == '__main__':
     # 定义命令集
